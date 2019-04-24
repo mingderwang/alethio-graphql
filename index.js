@@ -4,40 +4,24 @@ var { buildSchema } = require('graphql');
 const port = '1338'
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
-  type RandomDie {
-    numSides: Int!
-    rollOnce: Int!
-    roll(numRolls: Int!): [Int]
+  type Block {
+    number: String
+    blockHash: String
   }
 
   type Query {
-    getDie(numSides: Int): RandomDie
+    blocks(number: String): Block
   }
 `);
 
-// This class implements the RandomDie GraphQL type
-class RandomDie {
-  constructor(numSides) {
-    this.numSides = numSides;
-  }
-
-  rollOnce() {
-    return 1 + Math.floor(Math.random() * this.numSides);
-  }
-
-  roll({numRolls}) {
-    var output = [];
-    for (var i = 0; i < numRolls; i++) {
-      output.push(this.rollOnce());
-    }
-    return output;
-  }
-}
+Blocks = require('./blocks')
 
 // The root provides the top-level API endpoints
 var root = {
-  getDie: function ({numSides}) {
-    return new RandomDie(numSides || 6);
+  blocks: function ({
+    number
+  }) {
+    return new Blocks(number).create()
   }
 }
 
