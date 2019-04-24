@@ -1,0 +1,32 @@
+{
+  "name": "alethio-graphql",
+  "version": "1.0.0",
+  "description": "A graphQL interface fro Alethio Ethereum API",
+  "author" : {
+    "name": "Ming-der Wang",
+    "email": "mingderwang@gmail.com",
+    "url": "www.log4analytics.com"
+  }
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.2.1",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ethereum",
+    "alethio",
+    "graphql",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/mingderwang/alethio-graphql/issues"
+  }
+}
