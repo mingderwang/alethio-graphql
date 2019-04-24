@@ -1,5 +1,5 @@
-# blocks query example
-query
+# blocks query examples
+query the 123th block
 ```
 {
   blocks(number: "123") {
@@ -19,7 +19,7 @@ result
   }
 }
 ```
-or, query latest block
+or, query the latest block
 ```
 {
   blocks(number: "latest") {
@@ -39,3 +39,9 @@ result
   }
 }
 ```
+# features
+* query blocks
+* subscribe getNewBlock
+
+# todo
+* to impletement subscription for getNewBlock in graphQL
