@@ -1,10 +1,55 @@
-# blocks query examples
+# build
+```
+yarn
+yarn dev
+```
+# deploy
+```
+yarn start
+```
+# graphQL query examples
 subscription for a new block
 ```
 subscription {
   newBlock {
     number
     blockHash
+  }
+}
+```
+query block for more information
+```
+{
+  blocks(number: "1") {
+    id
+    links
+    number
+    blockHash
+    blockGasUsed
+    blockGasLimit
+    blockDifficulty
+    blockCreationTime
+    blockBeneficiaryReward
+    hasBeneficiaryAlias
+  }
+}
+```
+result
+```
+{
+  "data": {
+    "blocks": {
+      "id": "0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6",
+      "links": "https://api.ethstats.io/v1/blocks/0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6",
+      "number": "1",
+      "blockHash": "0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6",
+      "blockGasUsed": "0",
+      "blockGasLimit": "5000",
+      "blockDifficulty": "17171480576",
+      "blockCreationTime": "1438269988",
+      "blockBeneficiaryReward": "5000000000000000000",
+      "hasBeneficiaryAlias": "0xgeth/v1.0.0/linux/go1.4.2"
+    }
   }
 }
 ```
@@ -52,7 +97,8 @@ result
 ```
 # features
 * query blocks
-* subscribe getNewBlock
+* subscribe newBlock
+* other APIs
 
 # todo
-* to impletement subscription for getNewBlock in graphQL
+* to implement the rest of RESTful API with graphQL query
