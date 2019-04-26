@@ -1,4 +1,15 @@
 # blocks query examples
+subscription for a new block
+```
+subscription {
+  newBlock {
+    number
+    blockHash
+  }
+}
+```
+--------------
+
 query the 123th block
 ```
 {
