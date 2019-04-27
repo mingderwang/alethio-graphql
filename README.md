@@ -1,3 +1,6 @@
+# demo
+[https://alethio-graphql.now.sh/graphql](https://alethio-graphql.now.sh/graphql)
+
 # build
 ```
 yarn
