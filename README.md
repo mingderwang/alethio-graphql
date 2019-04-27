@@ -98,6 +98,35 @@ result
   }
 }
 ```
+---------
+support one previous generation of parentBlock
+```
+{
+  blocks(number: "2") {
+    number
+    blockHash
+    parentBlock {
+      number
+      blockHash
+    }
+  }
+}
+```
+result
+```
+{
+  "data": {
+    "blocks": {
+      "number": "2",
+      "blockHash": "0xb495a1d7e6663152ae92708da4843337b958146015a2802f4193a410044698c9",
+      "parentBlock": {
+        "number": "1",
+        "blockHash": "0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6"
+      }
+    }
+  }
+}
+```
 # features
 * query blocks
 * subscribe newBlock

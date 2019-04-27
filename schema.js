@@ -21,6 +21,7 @@ const typeDefs = `
       blockGasLimit: String
       blockGasUsed: String
       hasBeneficiaryAlias: String
+      parentBlock: Block
     }
 
     # This type specifies the entry points into our API.
