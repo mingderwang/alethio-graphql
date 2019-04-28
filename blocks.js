@@ -1,11 +1,7 @@
-var axios = require('axios')
-var instance = axios.create({
-  baseURL: 'https://api.ethstats.io/v1/'
-})
+var instance = require('./axiosInstance')
 
 class Blocks {
   constructor (number, id, blockHash, label) {
-    console.log(number, id, blockHash, label)
     if (number !== undefined && number !== '') this.number = number
     else if (id !== undefined && id !== '') this.number = id
     else if (blockHash !== undefined && blockHash !== '') {
@@ -22,7 +18,6 @@ class Blocks {
     return result
   }
 }
-module.exports = Blocks
 
 async function getBlock (number, withoutParent) {
   if (number === '') {
@@ -55,3 +50,5 @@ async function getBlock (number, withoutParent) {
     return result
   }
 }
+
+module.exports = Blocks

@@ -13,8 +13,17 @@ const typeDefs = `
       parentBlock: Block
     }
 
+    type Account {
+      id: String!
+      links: String!
+      address: String! 
+      nonce: Int! 
+      balance: String!
+    }
+
     type Query {
       blocks(number: String id: String blockHash: String label: String): Block
+      accounts(address: String): Account
     }
 
     type Subscription {

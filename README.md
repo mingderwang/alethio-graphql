@@ -11,7 +11,8 @@ yarn dev
 yarn start
 ```
 # graphQL query examples
-subscription for a new block
+## blocks
+subscription for the latest block
 ```
 subscription {
   latestBlock {
@@ -20,6 +21,7 @@ subscription {
   }
 }
 ```
+-----------
 query block for more information
 ```
 {
@@ -57,7 +59,6 @@ result
 }
 ```
 --------------
-
 query the 123th block
 ```
 {
@@ -98,7 +99,7 @@ result
   }
 }
 ```
----------
+-------------
 support one previous generation of parentBlock
 ```
 {
@@ -127,10 +128,41 @@ result
   }
 }
 ```
+## accounts
+query account info
+```
+{
+  accounts (address: "0xb8c77482e45f1f44de1745f52c74426c631bdd52") {
+    id
+    address
+    nonce
+    balance
+    links
+  }
+}
+```
+result
+```
+{
+  "data": {
+    "accounts": {
+      "id": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "nonce": 1,
+      "balance": "5520533765000000000",
+      "links": "https://api.ethstats.io/v1/accounts/0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+    }
+  }
+}
+```
 # features
-* query blocks
+* query block info
 * subscribe latestBlock
-* other APIs
+* query account info
 
 # todo
-* to implement the rest of RESTful API with graphQL query
+* query log entries
+* query contract info
+* query transation info
+* query contract messages
+* to implement the rest of RESTful APIs with graphQL queries

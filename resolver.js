@@ -1,9 +1,9 @@
 const { PubSub } = require('apollo-server-express')
 const pubsub = new PubSub() // create a PubSub instance
-const BLOCK_ADDED_TOPIC = 'newChannel'
-var axios = require('axios')
+const BLOCK_ADDED_TOPIC = 'newBlock'
 
 Blocks = require('./blocks')
+Accounts = require('./accounts')
 // start beating
 function setIntervalAndExecute (fn, t) {
   fn()
@@ -29,7 +29,10 @@ const resolvers = {
   Query: {
     blocks: (root, { number, id, blockHash, label }) => {
       return new Blocks(number, id, blockHash, label).create()
-    }
+    },
+    accounts: (root, { address }) => {
+      return new Accounts(address).create()
+    }, 
   },
   Subscription: {
     latestBlock: {
