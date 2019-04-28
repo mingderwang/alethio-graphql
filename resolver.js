@@ -25,7 +25,7 @@ const channels = [{
        new Blocks("latest").create().then((x) => {
        var newid = x.id
         if (newid !== oldid ) {
-          pubsub.publish(BLOCK_ADDED_TOPIC, { newBlock: x });
+          pubsub.publish(BLOCK_ADDED_TOPIC, { latestBlock: x });
           oldid = newid;
         }
       })
@@ -48,7 +48,7 @@ const resolvers = {
         },
     },
     Subscription: {
-        newBlock: {
+        latestBlock: {
           subscribe: () => pubsub.asyncIterator(BLOCK_ADDED_TOPIC)
         }
     }

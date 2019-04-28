@@ -32,7 +32,7 @@ const typeDefs = `
     }
 
     type Subscription {
-        newBlock: Block    # subscription operation.
+        latestBlock: Block    # subscription operation.
     }
 `;
 

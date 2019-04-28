@@ -14,7 +14,7 @@ yarn start
 subscription for a new block
 ```
 subscription {
-  newBlock {
+  latestBlock {
     number
     blockHash
   }
@@ -129,7 +129,7 @@ result
 ```
 # features
 * query blocks
-* subscribe newBlock
+* subscribe latestBlock
 * other APIs
 
 # todo
