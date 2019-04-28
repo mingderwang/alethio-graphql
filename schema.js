@@ -1,15 +1,4 @@
 const typeDefs = `
-    type Channel {
-      id: ID              # "!" denotes a required field
-      name: String
-      messages: [Message]
-    }
-
-    type Message {
-      id: ID!
-      text: String
-    }
-
     type Block {
       id: String!
       links: String!
@@ -24,16 +13,13 @@ const typeDefs = `
       parentBlock: Block
     }
 
-    # This type specifies the entry points into our API.
     type Query {
-      channels: [Channel]    # "[]" means this is a list of channels
-      channel(id: ID!): Channel
-      blocks(number: String!): Block
+      blocks(number: String id: String blockHash: String label: String): Block
     }
 
     type Subscription {
-        latestBlock: Block    # subscription operation.
+        latestBlock: Block
     }
-`;
+`
 
 module.exports = typeDefs
