@@ -38,12 +38,18 @@ const typeDefs = `
       links: String!
     }
 
+    type ContractMessage {
+      id: String!
+      links: String!
+    }
+
     type Query {
       blocks(number: String id: String blockHash: String label: String): Block
       accounts(address: String): Account
       contracts(address: String): Contract
       log_entries(id: String): LogEntry
       transactions(txHash: String): Transaction
+      contract_messages(id: String): ContractMessage
     }
 
     type Subscription {

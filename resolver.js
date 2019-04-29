@@ -7,6 +7,7 @@ Accounts = require('./accounts')
 Contracts = require('./contracts')
 LogEntries = require('./log-entries')
 Transactions = require('./transactions')
+ContractMessages = require('./contrac-messages')
 // start beating
 function setIntervalAndExecute (fn, t) {
   fn()
@@ -44,7 +45,10 @@ const resolvers = {
     }, 
     transactions: (root, { txHash }) => {
       return new Transactions(txHash).create()
-    }, 
+    },
+    contract_messages: (root, { id }) => {
+      return new ContractMessages(id).create()
+    }
   },
   Subscription: {
     latestBlock: {

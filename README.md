@@ -224,6 +224,28 @@ result
   }
 }
 ```
+## contract messages
+```
+{
+  contract_messages(
+    id: "msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24"
+  ) {
+    id
+    links
+  }
+}
+```
+result
+```
+{
+  "data": {
+    "contract_messages": {
+      "id": "msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24",
+      "links": "https://api.ethstats.io/v1/contract-messages/msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24"
+    }
+  }
+}
+```
 # features
 * query block info
 * subscribe latestBlock
@@ -231,11 +253,10 @@ result
 * query log entries
 * query contract info
 * query transation info
+* query contract messages
 
 # todo
 * to add more info for log entries query
 * to add account contract, contractMessage and transaction info
 * to add more contract fields
 * to add more info for transactions query
-* query contract messages
-* to implement the rest of RESTful APIs with graphQL queries
