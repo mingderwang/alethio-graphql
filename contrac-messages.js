@@ -56,6 +56,13 @@ async function getContractMessage (id) {
         result['transaction'] = new Transactions(
           response.data.data.relationships.transaction.data.id
         ).create()
+        let parentContractMessage =
+          response.data.data.relationships.parentContractMessage.data.id
+        if (parentContractMessage !== null) {
+          result['parentContractMessage'] = new ContractMessages(
+            response.data.data.relationships.parentContractMessage.data.id
+          ).create()
+        }
       })
     } catch (error) {
       console.error(error)

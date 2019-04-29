@@ -60,6 +60,7 @@ const typeDefs = `
       to: Account
       originator: Account
       transaction: Transaction
+      parentContractMessage: ContractMessage
     }
 
     type Query {
