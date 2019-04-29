@@ -12,7 +12,43 @@ class ContractMessages {
     var result = await getContractMessage(this.id)
     return result
   }
+
+  async getContractMessages_by_account () {
+    let result = {
+      data: [],
+      count: 0,
+      links: {
+        next: null,
+        prev: null
+      },
+      page: {
+        hasNext: false,
+        hasPrev: false
+      }
+    }
+    result.data = await getContractMessages(this.id)
+    return result.data
+  }
 }
+
+async function getContractMessages (id) {
+  try {
+    await instance
+      .get('accounts/' + id + '/contractMessages')
+      .then(response => {
+        result = []
+        let a = response.data.data
+        var i = a.length
+        for (var j = 0; j < i; j++) {
+          result.push(new ContractMessages(a[j].id).create())
+        }
+      })
+  } catch (error) {
+    console.error(error)
+  }
+  return result
+}
+
 async function getContractMessage (id) {
   if (id === undefined) {
     return null
@@ -45,21 +81,25 @@ async function getContractMessage (id) {
         result['includedInBlock'] = new Blocks(
           response.data.data.relationships.includedInBlock.data.id
         ).create()
+        /*
         result['from'] = new Accounts(
           response.data.data.relationships.from.data.id
-        ).create()
+        ).createWithoutContractMessages()
         result['to'] = new Accounts(
           response.data.data.relationships.to.data.id
-        ).create()
+        ).createWithoutContractMessages()
         result['originator'] = new Accounts(
           response.data.data.relationships.originator.data.id
-        ).create()
+        ).createWithoutContractMessages()
+        */
         result['transaction'] = new Transactions(
           response.data.data.relationships.transaction.data.id
         ).create()
-        let parentContractMessage =
-          response.data.data.relationships.parentContractMessage.data.id
-        if (parentContractMessage !== null) {
+        if (
+          response.data.data.relationships.parentContractMessage.data !== null
+        ) {
+          let parentContractMessage =
+            response.data.data.relationships.parentContractMessage.data.id
           result['parentContractMessage'] = new ContractMessages(
             response.data.data.relationships.parentContractMessage.data.id
           ).create()

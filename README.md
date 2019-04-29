@@ -132,14 +132,24 @@ result
 query account info
 ```
 {
-  accounts (address: "0xb8c77482e45f1f44de1745f52c74426c631bdd52") {
+  accounts(address: "0xb8c77482e45f1f44de1745f52c74426c631bdd52") {
     id
     address
     nonce
     balance
     links
+    contract {
+      links
+    }
+    contractMessages {
+      cmsgIndex
+      includedInBlock {
+        blockHash
+      }
+    }
   }
 }
+
 ```
 result
 ```
@@ -149,8 +159,73 @@ result
       "id": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
       "address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
       "nonce": 1,
-      "balance": "5520533765000000000",
-      "links": "https://api.ethstats.io/v1/accounts/0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+      "balance": "5522357335000000000",
+      "links": "https://api.ethstats.io/v1/accounts/0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "contract": {
+        "links": "https://api.ethstats.io/v1/contracts/0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+      },
+      "contractMessages": [
+        {
+          "cmsgIndex": 4,
+          "includedInBlock": {
+            "blockHash": "0x2fcdb6497ce89b1703ea268afba73a02b86e701b2417519a72c7220dbc8fc8d1"
+          }
+        },
+        {
+          "cmsgIndex": 2,
+          "includedInBlock": {
+            "blockHash": "0x2fcdb6497ce89b1703ea268afba73a02b86e701b2417519a72c7220dbc8fc8d1"
+          }
+        },
+        {
+          "cmsgIndex": 1,
+          "includedInBlock": {
+            "blockHash": "0x2fcdb6497ce89b1703ea268afba73a02b86e701b2417519a72c7220dbc8fc8d1"
+          }
+        },
+        {
+          "cmsgIndex": 4,
+          "includedInBlock": {
+            "blockHash": "0xd1a2eb7620e6d97ede7e0109de3d0cd9d0263763a314f2c0b5c11c11bcf229a7"
+          }
+        },
+        {
+          "cmsgIndex": 2,
+          "includedInBlock": {
+            "blockHash": "0xd1a2eb7620e6d97ede7e0109de3d0cd9d0263763a314f2c0b5c11c11bcf229a7"
+          }
+        },
+        {
+          "cmsgIndex": 1,
+          "includedInBlock": {
+            "blockHash": "0xd1a2eb7620e6d97ede7e0109de3d0cd9d0263763a314f2c0b5c11c11bcf229a7"
+          }
+        },
+        {
+          "cmsgIndex": 4,
+          "includedInBlock": {
+            "blockHash": "0x1de82605de90b68e5fafb1890330bcf1093340e0f70278d45b349035a847b855"
+          }
+        },
+        {
+          "cmsgIndex": 2,
+          "includedInBlock": {
+            "blockHash": "0x1de82605de90b68e5fafb1890330bcf1093340e0f70278d45b349035a847b855"
+          }
+        },
+        {
+          "cmsgIndex": 1,
+          "includedInBlock": {
+            "blockHash": "0x1de82605de90b68e5fafb1890330bcf1093340e0f70278d45b349035a847b855"
+          }
+        },
+        {
+          "cmsgIndex": 4,
+          "includedInBlock": {
+            "blockHash": "0x5ca2876cdf1f86bc59e6c56b15e4ff11788dabe9192a25dc37b5b1c3243fbcec"
+          }
+        }
+      ]
     }
   }
 }
@@ -274,6 +349,21 @@ query transaction info
   ) {
     id
     links
+    txType
+    globalRank
+    blockCreationTime
+    cursor
+    fee
+    firstSeen
+    msgError
+    msgGasLimit
+    txGasPrice
+    txGasUsed
+    txHash
+    txIndex
+    txNonce
+    txType
+    value
   }
 }
 ```
@@ -283,7 +373,25 @@ result
   "data": {
     "transactions": {
       "id": "0x6c9dad29509895be39a20c780b08baa040eca86759f40bc0b255e25b3a8035ce",
-      "links": "https://api.ethstats.io/v1/transactions/0x6c9dad29509895be39a20c780b08baa040eca86759f40bc0b255e25b3a8035ce"
+      "links": "https://api.ethstats.io/v1/transactions/0x6c9dad29509895be39a20c780b08baa040eca86759f40bc0b255e25b3a8035ce",
+      "txType": "CallTx",
+      "globalRank": [
+        7656501,
+        92,
+        0
+      ],
+      "blockCreationTime": 1556462685,
+      "cursor": "0x0074d435005c000010009acd04c3bc8a",
+      "fee": "351224000000000",
+      "firstSeen": 1556462695,
+      "msgError": false,
+      "msgGasLimit": "143903",
+      "txGasPrice": "8000000000",
+      "txGasUsed": 43903,
+      "txHash": "0x6c9dad29509895be39a20c780b08baa040eca86759f40bc0b255e25b3a8035ce",
+      "txIndex": 41,
+      "txNonce": 230,
+      "value": 0
     }
   }
 }

@@ -19,6 +19,8 @@ const typeDefs = `
       address: String! 
       nonce: Int! 
       balance: String!
+      contract: Contract
+      contractMessages: [ContractMessage]
     }
 
     type Contract {
@@ -66,7 +68,7 @@ const typeDefs = `
       id: String!
       links: String!
       blockCreationTime: Int!
-      cmsgIndex: String!
+      cmsgIndex: Int!
       cursor: String!
       fee: String!
       msgCallDepth: Int!
@@ -77,7 +79,7 @@ const typeDefs = `
       msgGasUsed: Int!
       msgType: String!
       txGasPrice: String!
-      value: Int!
+      value: String!
       # msgPayload:
       includedInBlock: Block # https://api.aleth.io/v1/contract-messages/{id}/includedInBlock
       from : Account

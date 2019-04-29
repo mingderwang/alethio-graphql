@@ -39,7 +39,6 @@ async function getTransaction (txHash) {
             result[Object.keys(a)[j]] = Object.values(a)[j]
           }
         }
-        msgGlobalRank
       })
     } catch (error) {
       console.error(error)
