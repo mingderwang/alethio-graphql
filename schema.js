@@ -32,6 +32,13 @@ const typeDefs = `
       id: String!
       links: String!
       hasLogTopics: [String]!
+      globalRank: [String]!
+      eventDecodedError: String
+      # eventDecoded
+      loggedBy: Contract
+      block: Block
+      transaction: Transaction
+      contractMessage: ContractMessage
     }
 
     type Transaction {

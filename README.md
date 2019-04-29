@@ -190,6 +190,32 @@ query log_entries
     id
     links
     hasLogTopics
+    globalRank
+    eventDecodedError
+    loggedBy {
+      id
+      address
+      balance
+    }
+    block {
+      id
+      blockHash
+    }
+    transaction {
+      id
+      links
+    }
+    contractMessage {
+      id
+      links
+      msgGasUsed
+      from {
+        address
+      }
+      to {
+        address
+      }
+    }
   }
 }
 ```
@@ -204,7 +230,37 @@ result
         "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
         "0x000000000000000000000000f30cb9e6f48cde5f3df13231d466fd85e2687e7c",
         "0x0000000000000000000000007ff6fd154863bedcbb0fa8e63abc9f1f38eec1fc"
-      ]
+      ],
+      "globalRank": [
+        "7274862",
+        "128",
+        "0"
+      ],
+      "eventDecodedError": "",
+      "loggedBy": {
+        "id": "0xc9c4d9ec2b44b241361707679d3db0876ac10ca6",
+        "address": "0xc9c4d9ec2b44b241361707679d3db0876ac10ca6",
+        "balance": "0"
+      },
+      "block": {
+        "id": "0x2901007eea7c9b0c16d3c2c0c1449825687f339b79c655830f8c8891f8cbe1f5",
+        "blockHash": "0x2901007eea7c9b0c16d3c2c0c1449825687f339b79c655830f8c8891f8cbe1f5"
+      },
+      "transaction": {
+        "id": "0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef",
+        "links": "https://api.ethstats.io/v1/transactions/0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef"
+      },
+      "contractMessage": {
+        "id": "msg:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:1",
+        "links": "https://api.ethstats.io/v1/contract-messages/msg:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:1",
+        "msgGasUsed": 14802,
+        "from": {
+          "address": "0xf30cb9e6f48cde5f3df13231d466fd85e2687e7c"
+        },
+        "to": {
+          "address": "0xc9c4d9ec2b44b241361707679d3db0876ac10ca6"
+        }
+      }
     }
   }
 }
@@ -335,7 +391,5 @@ result
 * query contract messages
 
 # todo
-* to add more info for log entries query
-* to add account contract, contractMessage and transaction info
-* to add more contract fields
+* to add account, contract, contractMessage and transaction info
 * to add more info for transactions query

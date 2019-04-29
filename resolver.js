@@ -7,7 +7,7 @@ Accounts = require('./accounts')
 Contracts = require('./contracts')
 LogEntries = require('./log-entries')
 Transactions = require('./transactions')
-ContractMessages = require('./contrac-messages')
+ContractMessages = require('./contract-messages')
 // start beating
 function setIntervalAndExecute (fn, t) {
   fn()
