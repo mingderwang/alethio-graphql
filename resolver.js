@@ -4,6 +4,7 @@ const BLOCK_ADDED_TOPIC = 'newBlock'
 
 Blocks = require('./blocks')
 Accounts = require('./accounts')
+Contracts = require('./contracts')
 // start beating
 function setIntervalAndExecute (fn, t) {
   fn()
@@ -32,6 +33,9 @@ const resolvers = {
     },
     accounts: (root, { address }) => {
       return new Accounts(address).create()
+    }, 
+    contracts: (root, { address }) => {
+      return new Contracts(address).create()
     }, 
   },
   Subscription: {

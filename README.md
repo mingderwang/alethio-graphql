@@ -155,12 +155,39 @@ result
   }
 }
 ```
+## contracts
+query a contract info
+```
+{
+  contracts (address: "0xb8c77482e45f1f44de1745f52c74426c631bdd52") {
+    id
+    address
+    balance
+    links
+  }
+}
+```
+result
+```
+{
+  "data": {
+    "contracts": {
+      "id": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+      "balance": "5520533765000000000",
+      "links": "https://api.ethstats.io/v1/contracts/0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+    }
+  }
+}
+```
 # features
 * query block info
 * subscribe latestBlock
 * query account info
 
 # todo
+* to add account contract, contractMessage and transaction info
+* to add more contract fields
 * query log entries
 * query contract info
 * query transation info

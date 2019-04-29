@@ -21,9 +21,17 @@ const typeDefs = `
       balance: String!
     }
 
+    type Contract {
+      id: String!
+      links: String!
+      address: String!
+      balance: String!
+    }
+
     type Query {
       blocks(number: String id: String blockHash: String label: String): Block
       accounts(address: String): Account
+      contracts(address: String): Contract
     }
 
     type Subscription {
