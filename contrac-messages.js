@@ -1,4 +1,5 @@
 var instance = require('./axiosInstance')
+Blocks = require('./blocks')
 
 class ContractMessages {
   constructor (id) {
@@ -27,19 +28,20 @@ async function getContractMessage (id) {
         let a = response.data.data.attributes
         var i = Object.keys(a).length
         for (var j = 0; j < i; j++) {
-          console.log(Object.keys(a)[j])
           if (Object.keys(a)[j] === 'globalRank') {
             var rankArray = []
             let b = Object.values(a)[j]
             var x = Object.keys(b).length
             for (var y = 0; y < x; y++) {
-              console.log(Object.values(y))
               rankArray.push(Object.values(y))
             }
             result[Object.keys(a)[j]] = rankArray
           }
           result[Object.keys(a)[j]] = Object.values(a)[j]
         }
+        result['includedInBlock'] = new Blocks(
+          response.data.data.relationships.includedInBlock.data.id
+        ).create()
       })
     } catch (error) {
       console.error(error)

@@ -55,6 +55,7 @@ const typeDefs = `
       txGasPrice: String!
       value: Int!
       # msgPayload:
+      includedInBlock: Block # https://api.aleth.io/v1/contract-messages/{id}/includedInBlock
     }
 
     type Query {
