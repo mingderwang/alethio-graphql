@@ -28,10 +28,16 @@ const typeDefs = `
       balance: String!
     }
 
+    type LogEntry {
+      id: String!
+      links: String!
+    }
+
     type Query {
       blocks(number: String id: String blockHash: String label: String): Block
       accounts(address: String): Account
       contracts(address: String): Contract
+      log_entries(id: String): LogEntry
     }
 
     type Subscription {
