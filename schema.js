@@ -58,6 +58,8 @@ const typeDefs = `
       includedInBlock: Block # https://api.aleth.io/v1/contract-messages/{id}/includedInBlock
       from : Account
       to: Account
+      originator: Account
+      transaction: Transaction
     }
 
     type Query {

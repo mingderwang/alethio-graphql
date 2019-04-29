@@ -245,8 +245,29 @@ result
     msgType
     txGasPrice
     value
+    includedInBlock {
+      id
+      number
+      parentBlock {
+        id
+        number
+      }
+    }
+    from {
+      id
+    }
+    to {
+      id
+    }
+    originator {
+      id
+    }
+    transaction {
+      id
+    }
   }
 }
+
 ```
 result
 ```
@@ -271,7 +292,27 @@ result
       ],
       "msgType": "CallContractMsg",
       "txGasPrice": "3000000000",
-      "value": 0
+      "value": 0,
+      "includedInBlock": {
+        "id": "0x683acffdec2b3e7de839adae6a5621b4dbcc629e83916f72561cb6fa603a8c02",
+        "number": "7660162",
+        "parentBlock": {
+          "id": "0x9a975e0c1e365ed540bd67e1b2e6fff21cdbbbf5f41689aacb49980deae95d21",
+          "number": "7660161"
+        }
+      },
+      "from": {
+        "id": "0x751b934e7496e437503d74d0679a45e49c0b7071"
+      },
+      "to": {
+        "id": "0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+      },
+      "originator": {
+        "id": "0x00a183fdbebce39cc1065b14b1015cea3b40b651"
+      },
+      "transaction": {
+        "id": "0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a"
+      }
     }
   }
 }
@@ -282,7 +323,7 @@ result
 * query account info
 * query log entries
 * query contract info
-* query transation info
+* query transaction info
 * query contract messages
 
 # todo
