@@ -232,6 +232,19 @@ result
   ) {
     id
     links
+    blockCreationTime
+    cmsgIndex
+    cursor
+    fee
+    msgCallDepth
+    msgError
+    msgErrorString
+    msgGasLimit
+    msgGasUsed
+    globalRank
+    msgType
+    txGasPrice
+    value
   }
 }
 ```
@@ -241,7 +254,24 @@ result
   "data": {
     "contract_messages": {
       "id": "msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24",
-      "links": "https://api.ethstats.io/v1/contract-messages/msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24"
+      "links": "https://api.ethstats.io/v1/contract-messages/msg:0xf07e058e0cdd0cae990944f2deb8fc1e29fbb40c70713ea336a99e1ed40a0e2a:24",
+      "blockCreationTime": 1556511374,
+      "cmsgIndex": "24",
+      "cursor": "0x0074e282008e00002001683acffdec2b",
+      "fee": "2025000000000",
+      "msgCallDepth": 3,
+      "msgError": false,
+      "msgErrorString": "",
+      "msgGasLimit": "1323552",
+      "msgGasUsed": 675,
+      "globalRank": [
+        7660162,
+        142,
+        0
+      ],
+      "msgType": "CallContractMsg",
+      "txGasPrice": "3000000000",
+      "value": 0
     }
   }
 }

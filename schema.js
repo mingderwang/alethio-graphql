@@ -41,6 +41,20 @@ const typeDefs = `
     type ContractMessage {
       id: String!
       links: String!
+      blockCreationTime: Int!
+      cmsgIndex: String!
+      cursor: String!
+      fee: String!
+      msgCallDepth: Int!
+      msgGasLimit: String!
+      msgError: Boolean!
+      globalRank: [Int]!
+      msgErrorString: String
+      msgGasUsed: Int!
+      msgType: String!
+      txGasPrice: String!
+      value: Int!
+      # msgPayload:
     }
 
     type Query {
