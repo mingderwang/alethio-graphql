@@ -1,5 +1,6 @@
 var instance = require('./axiosInstance')
 Blocks = require('./blocks')
+Accounts = require('./accounts')
 
 class ContractMessages {
   constructor (id) {
@@ -41,6 +42,12 @@ async function getContractMessage (id) {
         }
         result['includedInBlock'] = new Blocks(
           response.data.data.relationships.includedInBlock.data.id
+        ).create()
+        result['from'] = new Accounts(
+          response.data.data.relationships.from.data.id
+        ).create()
+        result['to'] = new Accounts(
+          response.data.data.relationships.to.data.id
         ).create()
       })
     } catch (error) {

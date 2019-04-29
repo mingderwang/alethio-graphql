@@ -56,6 +56,8 @@ const typeDefs = `
       value: Int!
       # msgPayload:
       includedInBlock: Block # https://api.aleth.io/v1/contract-messages/{id}/includedInBlock
+      from : Account
+      to: Account
     }
 
     type Query {
