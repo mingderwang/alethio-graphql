@@ -184,9 +184,12 @@ result
 query log_entries
 ```
 {
-  log_entries (id: "log:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:0") {
+  log_entries(
+    id: "log:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:0"
+  ) {
     id
     links
+    hasLogTopics
   }
 }
 ```
@@ -196,7 +199,12 @@ result
   "data": {
     "log_entries": {
       "id": "log:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:0",
-      "links": "https://api.ethstats.io/v1/log-entries/log:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:0"
+      "links": "https://api.ethstats.io/v1/log-entries/log:0xd70ae3e306514044032fce92bd36a36b90aede20bb119b32672287d28debf5ef:0",
+      "hasLogTopics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x000000000000000000000000f30cb9e6f48cde5f3df13231d466fd85e2687e7c",
+        "0x0000000000000000000000007ff6fd154863bedcbb0fa8e63abc9f1f38eec1fc"
+      ]
     }
   }
 }

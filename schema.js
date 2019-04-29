@@ -31,6 +31,7 @@ const typeDefs = `
     type LogEntry {
       id: String!
       links: String!
+      hasLogTopics: [String]!
     }
 
     type Transaction {
