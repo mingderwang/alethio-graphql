@@ -39,8 +39,9 @@ async function getLogEntry (id) {
               rankArray.push(Object.values(y))
             }
             result[Object.keys(a)[j]] = rankArray
+          } else {
+            result[Object.keys(a)[j]] = Object.values(a)[j]
           }
-          result[Object.keys(a)[j]] = Object.values(a)[j]
         }
         result['loggedBy'] = new Contracts(
           response.data.data.relationships.loggedBy.data.id

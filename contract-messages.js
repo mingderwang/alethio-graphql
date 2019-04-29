@@ -38,8 +38,9 @@ async function getContractMessage (id) {
               rankArray.push(Object.values(y))
             }
             result[Object.keys(a)[j]] = rankArray
+          } else {
+            result[Object.keys(a)[j]] = Object.values(a)[j]
           }
-          result[Object.keys(a)[j]] = Object.values(a)[j]
         }
         result['includedInBlock'] = new Blocks(
           response.data.data.relationships.includedInBlock.data.id

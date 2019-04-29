@@ -44,6 +44,22 @@ const typeDefs = `
     type Transaction {
       id: String!
       links: String!
+      txType: String!
+      globalRank: [Int]!
+      blockCreationTime: Int!
+      cursor: String!
+      fee: String!
+      firstSeen: Int!
+      msgError: Boolean!
+      # msgErrorString:
+      msgGasLimit: String!
+      # msgPayload
+      txGasPrice: String!
+      txGasUsed: Int!
+      txHash: String!
+      txIndex: Int!
+      txNonce: Int!
+      value: String!
     }
 
     type ContractMessage {

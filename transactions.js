@@ -27,8 +27,19 @@ async function getTransaction (txHash) {
         let a = response.data.data.attributes
         var i = Object.keys(a).length
         for (var j = 0; j < i; j++) {
-          result[Object.keys(a)[j]] = Object.values(a)[j]
+          if (Object.keys(a)[j] in ['globalRank']) {
+            var rankArray = []
+            let b = Object.values(a)[j]
+            var x = Object.keys(b).length
+            for (var y = 0; y < x; y++) {
+              rankArray.push(Object.values(y))
+            }
+            result[Object.keys(a)[j]] = rankArray
+          } else {
+            result[Object.keys(a)[j]] = Object.values(a)[j]
+          }
         }
+        msgGlobalRank
       })
     } catch (error) {
       console.error(error)
