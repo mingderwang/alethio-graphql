@@ -6,6 +6,7 @@ Blocks = require('./blocks')
 Accounts = require('./accounts')
 Contracts = require('./contracts')
 LogEntries = require('./log-entries')
+Transactions = require('./transactions')
 // start beating
 function setIntervalAndExecute (fn, t) {
   fn()
@@ -40,6 +41,9 @@ const resolvers = {
     }, 
     log_entries: (root, { id }) => {
       return new LogEntries(id).create()
+    }, 
+    transactions: (root, { txHash }) => {
+      return new Transactions(txHash).create()
     }, 
   },
   Subscription: {
