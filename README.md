@@ -12,6 +12,12 @@ yarn dev
 ```
 yarn start
 ```
+# docker run
+```
+docker-compose up
+```
+check http://localhost/graphql with your web browser
+
 # graphQL query examples
 ## blocks
 subscription for the latest block
@@ -549,6 +555,8 @@ result
 * query contract info
 * query transaction info
 * query contract messages
+* dockerized
+* support docker-compose
 
 # todo
 * fine tune
