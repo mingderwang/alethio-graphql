@@ -39,9 +39,9 @@ async function getAccount (address, withContractMessages) {
           result[Object.keys(a)[j]] = Object.values(a)[j]
         }
         if (withContractMessages) {
-        result['contract'] = new Contracts(
-          response.data.data.relationships.contract.data.id
-        ).create()
+          result['contract'] = new Contracts(
+            response.data.data.relationships.contract.data.id
+          ).create()
           result['contractMessages'] = new ContractMessages(
             address
           ).getContractMessages_by_account()

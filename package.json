@@ -11,7 +11,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node_modules/.bin/ava tests/**/*.test.js --verbose",
+    "test:watch": "node_modules/.bin/ava --verbose --watch"
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
@@ -19,10 +21,25 @@
     "es6-promise": "^4.2.6",
     "express": "^4.16.4",
     "graphql": "^14.2.1",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "rxjs": "^6.5.1"
   },
   "devDependencies": {
+    "ava": "^1.4.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "jsdom": "^15.0.0",
     "node": "^11.14.0",
     "nodemon": "^1.18.11"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }

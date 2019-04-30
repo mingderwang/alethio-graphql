@@ -234,11 +234,36 @@ result
 query a contract info
 ```
 {
-  contracts (address: "0xb8c77482e45f1f44de1745f52c74426c631bdd52") {
+  contracts(address: "0x6690819cb98c1211a8e38790d6cd48316ed518db") {
     id
     address
     balance
     links
+    constructorArgs
+    createdAtBlock {
+      blockHash
+      number
+      parentBlock {
+        blockHash
+      }
+    }
+    createdAtContractMessage {
+      id
+    }
+    createdAtTransaction {
+      txHash
+    }
+    account {
+      id
+      balance
+      contractMessages {
+        id
+        value
+      }
+      contract {
+        id
+      }
+    }
   }
 }
 ```
@@ -247,10 +272,30 @@ result
 {
   "data": {
     "contracts": {
-      "id": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
-      "address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
-      "balance": "5520533765000000000",
-      "links": "https://api.ethstats.io/v1/contracts/0xb8c77482e45f1f44de1745f52c74426c631bdd52"
+      "id": "0x6690819cb98c1211a8e38790d6cd48316ed518db",
+      "address": "0x6690819cb98c1211a8e38790d6cd48316ed518db",
+      "balance": "0",
+      "links": "https://api.ethstats.io/v1/contracts/0x6690819cb98c1211a8e38790d6cd48316ed518db",
+      "constructorArgs": [
+        "0x00000000000000000000000052ae12abe5d8bd778bd5397f99ca900624cfadd4"
+      ],
+      "createdAtBlock": {
+        "blockHash": "0x0207ea254cfdcf75f029e60535fe37a00520d7dfdde2f29c2603639e50affaa3",
+        "number": "7143880",
+        "parentBlock": {
+          "blockHash": "0x40a2d54169c270f4cbfdfd1de68b8f06e4452c6bfd56043a3048b4ac58549c9b"
+        }
+      },
+      "createdAtContractMessage": null,
+      "createdAtTransaction": {
+        "txHash": "0x55186bd472f504963ef9debcfa1c0df3de3dae72ca56e3536ca84228f267e6e3"
+      },
+      "account": {
+        "id": "0x6690819cb98c1211a8e38790d6cd48316ed518db",
+        "balance": "0",
+        "contractMessages": null,
+        "contract": null
+      }
     }
   }
 }
@@ -439,7 +484,6 @@ result
     }
   }
 }
-
 ```
 result
 ```

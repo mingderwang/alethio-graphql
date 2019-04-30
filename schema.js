@@ -28,6 +28,11 @@ const typeDefs = `
       links: String!
       address: String!
       balance: String!
+      account: Account
+      constructorArgs: [String]
+      createdAtBlock: Block
+      createdAtContractMessage: ContractMessage
+      createdAtTransaction: Transaction
     }
 
     type LogEntry {
