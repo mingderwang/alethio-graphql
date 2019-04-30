@@ -16,7 +16,7 @@ yarn start
 ```
 docker-compose up
 ```
-check http://localhost/graphql with your web browser
+check http://localhost/graphql with your web browser.
 
 # graphQL query examples
 ## blocks
