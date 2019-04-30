@@ -313,7 +313,7 @@ result
   }
 }
 ```
-## log entry
+## log entries
 query log_entries
 ```
 {
@@ -556,5 +556,5 @@ result
 * query contract messages
 
 # todo
-* fine tune
+* add missing data fields
 * debug
