@@ -1,4 +1,4 @@
-# demo
+# demo (v1.0.0-alpha)
 [https://alethio-graphql.now.sh/graphql](https://alethio-graphql.now.sh/graphql)
 
 ![Image of demo alethio-graphql](https://paper-attachments.dropbox.com/s_BE0D2934E38FF01EA2CACBC68AC848C1B6275467DBDBBCD0963BB0CECAC7ADF3_1556607030162_+2019-04-30+2.46.37.png)
@@ -11,6 +11,11 @@ yarn dev
 # deploy
 ```
 yarn start
+
+yarn run v1.13.0
+$ node server.js
+🚀 Server ready at http://localhost:80/graphql
+🚀 Subscriptions ready at ws://localhost:80/graphql
 ```
 # graphQL query examples
 ## blocks
