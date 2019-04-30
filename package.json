@@ -1,14 +1,26 @@
 {
   "name": "alethio-graphql",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A graphQL interface fro Alethio Ethereum API",
   "author": {
     "name": "Ming-der Wang",
     "email": "mingderwang@gmail.com",
-    "url": "www.log4analytics.com"
+    "url": "https://www.bimap.co/#"
   },
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mingderwang/alethio-graphql/#"
+  },
   "license": "MIT",
+  "keywords": [
+    "ethereum",
+    "blockchain",
+    "axios",
+    "api",
+    "graphql",
+    "alethio"
+  ],
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
@@ -41,5 +53,8 @@
     "presets": [
       "env"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/mingderwang/alethio-graphql/issues/#"
+  },
 }
