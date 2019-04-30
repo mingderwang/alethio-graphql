@@ -1,6 +1,8 @@
 # demo
 [https://alethio-graphql.now.sh/graphql](https://alethio-graphql.now.sh/graphql)
 
+![Image of demo alethio-graphql](https://paper-attachments.dropbox.com/s_BE0D2934E38FF01EA2CACBC68AC848C1B6275467DBDBBCD0963BB0CECAC7ADF3_1556607030162_+2019-04-30+2.46.37.png)
+
 # build
 ```
 yarn
@@ -17,7 +19,13 @@ subscription for the latest block
 subscription {
   latestBlock {
     number
+    blockGasUsed
+    blockDifficulty
     blockHash
+    parentBlock {
+      number
+      blockHash
+    }
   }
 }
 ```
@@ -534,8 +542,8 @@ result
 }
 ```
 # features
-* query block info
 * subscribe latestBlock
+* query block info
 * query account info
 * query log entries
 * query contract info
@@ -543,5 +551,5 @@ result
 * query contract messages
 
 # todo
-* to add account, contract, contractMessage and transaction info
-* to add more info for transactions query
+* fine tune
+* debug
